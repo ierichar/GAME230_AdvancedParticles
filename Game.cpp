@@ -8,6 +8,9 @@
 */
 #include "Game.h"
 
+using namespace gm;
+using namespace sf;
+
 /// <summary>
 /// This function exclusively takes the window, an Event, and a 
 /// ParticleEffect object
