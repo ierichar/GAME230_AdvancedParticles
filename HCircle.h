@@ -3,14 +3,13 @@
 
 #include "GameObject.h"
 
-using namespace sf;
+//using namespace sf;
 
-namespace gm {
-    class HCircle :
-        public GameObject
-    {
-        virtual void update(RenderWindow& window);
-    };
-}
+//namespace gm {
+class HCircle : public GameObject {
+public:
+	void update(sf::RenderWindow& window);
+};
+//}
 
 #endif

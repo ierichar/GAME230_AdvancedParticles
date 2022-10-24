@@ -18,7 +18,7 @@
 /* Namespaces */
 using namespace std;
 using namespace sf;
-using namespace gm;
+//using namespace gm;
 
 // Main, our applicaiton entry function
 int main()

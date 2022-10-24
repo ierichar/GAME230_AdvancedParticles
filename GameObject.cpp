@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
 using namespace sf;
-using namespace gm;
+//using namespace gm;
 
 GameObject::GameObject() {
 	shape = new CircleShape();

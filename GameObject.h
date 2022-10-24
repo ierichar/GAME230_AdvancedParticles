@@ -11,7 +11,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
-namespace gm {
+//namespace gm {
 	class GameObject {
 	private:
 		sf::CircleShape* shape;
@@ -32,6 +32,6 @@ namespace gm {
 
 		~GameObject();
 	};
-}
+//}
 
 #endif
