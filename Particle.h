@@ -92,7 +92,7 @@ private:
 	float radius;
 
 public:
-	CircleParticle(const float);
+	CircleParticle(const Vector2f&, const Vector2f&, const float, const float);
 	~CircleParticle() {};
 	void update() {};
 	virtual void render(RenderWindow&);

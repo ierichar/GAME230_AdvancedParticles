@@ -76,9 +76,10 @@ ShapeParticle::~ShapeParticle() {
 //*****************************************************************************
 // CircleParticle
 //*****************************************************************************
-CircleParticle::CircleParticle(const float radius) {
+CircleParticle::CircleParticle(const Vector2f& startPos, const Vector2f& startVel, const float lifespan, const float radius) {
 	Shape* shape_ptr = GetShape();
 	shape_ptr = new CircleShape(radius);
+	//startPos, startVel, lifeSpan, radius
 }
 
 void CircleParticle::render(RenderWindow& window) {
