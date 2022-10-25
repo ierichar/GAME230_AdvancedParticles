@@ -9,7 +9,7 @@ using namespace sf;
 Particle::Particle(const Vector2f& initialPosition, 
 	const Vector2f& initialVelocity, const float lifespan) {
 
-	this->position = initialPosition;
+	this->pos = initialPosition;
 	this->velocity = initialVelocity;
 	this->lifespan = lifespan;
 	this->current_lifespan = lifespan;
@@ -17,7 +17,7 @@ Particle::Particle(const Vector2f& initialPosition,
 
 /* Game Loop Functions */
 void Particle::update() {
-	position = position + velocity;
+	pos = pos + velocity;
 
 	// Test speed relative to framerate
 	if (this->isAlive())
@@ -25,11 +25,11 @@ void Particle::update() {
 }
 
 /* Accessors & Mutators */
-Vector2f Particle::getPosition() {
-	return position;
+Vector2f& Particle::getPosition() {
+	return pos;
 }
 
-Vector2f Particle::getVelocity() const {
+Vector2f& Particle::getVelocity() {
 	return velocity;
 }
 
@@ -42,7 +42,7 @@ float Particle::getLifespanRemaining() const {
 }
 
 void Particle::setPosition(const Vector2f& position) {
-	this->position = position;
+	this->pos = position;
 }
 
 void Particle::setVelocity(const Vector2f& velocity) {

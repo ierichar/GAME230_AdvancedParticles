@@ -10,19 +10,20 @@
 #include <SFML/Main.hpp>
 
 #include "Random.h"
-
+using namespace sf;
 #define DECAY_RATE 0.001f
 
 class Particle {
 private:
-	Vector2f position;
+	Vector2f pos;
 	Vector2f velocity;
 	float lifespan;
 	float current_lifespan;
 
 public:
+	Particle() { int x = 0; }
 	/* Constructors& Deconstructors */ 
-	Particle(const Vector2f&, const Vector2f&, const float);
+	explicit Particle(const Vector2f&, const Vector2f&, const float);
 	~Particle() {};
 
 	/* Game Loop Functions */
@@ -45,7 +46,7 @@ public:
 	/// </summary>
 	Vector2f& getPosition();
 
-	Vector2f& getVelocity() const;
+	Vector2f& getVelocity();
 
 	float getLifespan() const;
 
@@ -77,8 +78,8 @@ private:
 	Shape* shape;
 
 public:
-	ShapeParticle(const Vector2f& iP, const Vector2f& iV, const float ls) :
-		Particle(iP, iV, ls) {};
+	ShapeParticle() { int x = 1; }
+	using Particle :: Particle;
 	~ShapeParticle();	// needs to delete contents of shape if dynamically 
 						// allocated
 	void update() {};
