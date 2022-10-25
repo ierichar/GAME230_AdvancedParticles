@@ -23,7 +23,7 @@ private:
 public:
 	Particle() { int x = 0; }
 	/* Constructors& Deconstructors */ 
-	explicit Particle(const Vector2f&, const Vector2f&, const float);
+	Particle(const Vector2f&, const Vector2f&, const float);
 	~Particle() {};
 
 	/* Game Loop Functions */
@@ -78,7 +78,6 @@ private:
 	Shape* shape;
 
 public:
-	ShapeParticle() { int x = 1; }
 	using Particle :: Particle;
 	~ShapeParticle();	// needs to delete contents of shape if dynamically 
 						// allocated
