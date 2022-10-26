@@ -13,6 +13,7 @@
 * particle is alive and handles their deletion.
 *
 */
+#pragma once
 #ifndef PARTICLE_EFFECT_H
 #define PARTICLE_EFFECT_H
 
@@ -24,7 +25,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
-#include "Particle.h"
+// #include "Particle.h"
 
 #define NUM_OF_PARTICLES 10
 #define SHAPE_SPEED_RATE .25f
@@ -38,7 +39,7 @@ private:
 
 	std::string particleType = "Circle"; // Only uses "Circle" and "Sprite"
 
-	Particle* particles[NUM_OF_PARTICLES];
+	// Particle* particles[NUM_OF_PARTICLES];
 
 public:
 	// Constructors & Deconstructors
