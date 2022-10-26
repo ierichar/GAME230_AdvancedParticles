@@ -21,7 +21,7 @@ private:
 	float current_lifespan;
 
 public:
-	Particle() { int x = 0; }
+	//Particle() { int x = 0; }
 	/* Constructors& Deconstructors */ 
 	Particle(const Vector2f&, const Vector2f&, const float);
 	~Particle() {};
