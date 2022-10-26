@@ -78,7 +78,8 @@ private:
 	Shape* shape;
 
 public:
-	using Particle :: Particle;
+	ShapeParticle(const Vector2f&, const Vector2f&, const float, Shape&);
+	//using Particle :: Particle;
 	~ShapeParticle();	// needs to delete contents of shape if dynamically 
 						// allocated
 	void update() {};
@@ -91,7 +92,7 @@ private:
 	float radius;
 
 public:
-	CircleParticle(const Vector2f&, const Vector2f&, const float, const float);
+	CircleParticle(const Vector2f&, const Vector2f&, const float, const float, Shape&);
 	~CircleParticle() {};
 	void update() {};
 	virtual void render(RenderWindow&);

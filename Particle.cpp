@@ -68,6 +68,10 @@ void Particle::setAlive() {
 //*****************************************************************************
 // ShapeParticle
 //*****************************************************************************
+ShapeParticle::ShapeParticle(const Vector2f& startPos, const Vector2f& startVel, const float lifespan, Shape& newShape) 
+	: Particle(startPos, startVel, lifespan) {
+	*shape = newShape;
+}
 ShapeParticle::~ShapeParticle() {
 	if (shape != nullptr)
 		delete shape;
@@ -76,8 +80,8 @@ ShapeParticle::~ShapeParticle() {
 //*****************************************************************************
 // CircleParticle
 //*****************************************************************************
-CircleParticle::CircleParticle(const Vector2f& startPos, const Vector2f& startVel, const float lifespan, const float radius) 
-	: ShapeParticle(startPos, startVel, lifespan) {
+CircleParticle::CircleParticle(const Vector2f& startPos, const Vector2f& startVel, const float lifespan, const float radius, Shape& newShape) 
+	: ShapeParticle(startPos, startVel, lifespan, newShape) {
 	Shape* shape_ptr;
 	shape_ptr = new CircleShape(radius);
 	//startPos, startVel, lifeSpan, radius
