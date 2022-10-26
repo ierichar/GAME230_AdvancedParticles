@@ -157,6 +157,7 @@
     <ClInclude Include="ParticleEffect.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="ShapeParticle.h" />
+    <ClInclude Include="Snow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircleParticle.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEffect.cpp" />
     <ClCompile Include="ShapeParticle.cpp" />
+    <ClCompile Include="Snow.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

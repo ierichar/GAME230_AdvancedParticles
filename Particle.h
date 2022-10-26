@@ -14,6 +14,8 @@
 #define DECAY_RATE 0.001f
 
 namespace pe {
+	using namespace sf;
+
 	class Particle {
 	private:
 		Vector2f position;
@@ -23,7 +25,7 @@ namespace pe {
 
 	public:
 		/* Constructors& Deconstructors */
-		Particle(const Vector2f&, const Vector2f&, const float);
+		Particle(Vector2f&, Vector2f&, const float);
 		~Particle() {};
 
 		/* Game Loop Functions */
@@ -52,9 +54,9 @@ namespace pe {
 
 		float getLifespanRemaining() const;
 
-		void setPosition(const Vector2f&);
+		void setPosition(Vector2f&);
 
-		void setVelocity(const Vector2f&);
+		void setVelocity(Vector2f&);
 
 		void setLifeSpan(const float);
 

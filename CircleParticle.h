@@ -1,16 +1,17 @@
-
 #ifndef CIRCLE_PARTICLE_H
 #define CIRCLE_PARTICLE_H
 
 #include "ShapeParticle.h"
 
 namespace pe {
+	using namespace sf;
+
 	class CircleParticle : public ShapeParticle {
 	private:
 		float radius;
 
 	public:
-		CircleParticle(const Vector2f&, const Vector2f&, const float, const float, Shape&);
+		CircleParticle(Vector2f&, Vector2f&, const float, const float, CircleShape&);
 		~CircleParticle() {};
 		void update() {};
 		virtual void render(RenderWindow&);
