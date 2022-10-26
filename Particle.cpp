@@ -1,6 +1,8 @@
+
 #include "Particle.h"
 
 using namespace sf;
+using namespace pe;
 
 //*****************************************************************************
 // Particle 
@@ -29,7 +31,7 @@ Vector2f Particle::getPosition() {
 	return position;
 }
 
-Vector2f Particle::getVelocity() const {
+Vector2f Particle::getVelocity() {
 	return velocity;
 }
 
@@ -62,33 +64,4 @@ bool Particle::isAlive() const {
 
 void Particle::setAlive() {
 	current_lifespan = lifespan;
-}
-
-
-//*****************************************************************************
-// ShapeParticle
-//*****************************************************************************
-ShapeParticle::~ShapeParticle() {
-	if (shape != nullptr)
-		delete shape;
-}
-
-//*****************************************************************************
-// CircleParticle
-//*****************************************************************************
-CircleParticle::CircleParticle(const float radius) {
-	Shape* shape_ptr = GetShape();
-	shape_ptr = new CircleShape(radius);
-}
-
-void CircleParticle::render(RenderWindow& window) {
-	window.draw(*(GetShape()));
-}
-
-float CircleParticle::GetRadius() const {
-	return radius;
-}
-
-void CircleParticle::setRadius(const float radius) {
-	this->radius = radius;
 }
