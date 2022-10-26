@@ -7,10 +7,11 @@ using namespace pe;
 //*****************************************************************************
 // ShapeParticle
 //*****************************************************************************
-ShapeParticle::ShapeParticle(const Vector2f& iP, const Vector2f& iV,
-	const float ls, Shape& newShape) : Particle(iP, iV, ls) {
-	shape = &newShape;
+ShapeParticle::ShapeParticle(Vector2f& iP, Vector2f& iV, const float ls, 
+	CircleShape& circle) : Particle(iP, iV, ls) {
+	shape = &circle;
 }
+
 ShapeParticle::~ShapeParticle() {
 	//if (shape != nullptr)
 	//	delete shape;using namespace pe;

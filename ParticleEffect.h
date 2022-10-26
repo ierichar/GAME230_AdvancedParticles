@@ -13,7 +13,6 @@
 * particle is alive and handles their deletion.
 *
 */
-#pragma once
 #ifndef PARTICLE_EFFECT_H
 #define PARTICLE_EFFECT_H
 
@@ -25,68 +24,77 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
-// #include "Particle.h"
+#include "Particle.h"
 
-#define NUM_OF_PARTICLES 10
+#define NUM_OF_PARTICLES 20
 #define SHAPE_SPEED_RATE .25f
 #define SPRITE_SPEED_RATE 1.75f
 
 #define LO -0.5f
 #define HI 0.5f
 
-class ParticleEffect {
-private:
+namespace pe {
+	using namespace sf;
 
-	std::string particleType = "Circle"; // Only uses "Circle" and "Sprite"
+	class ParticleEffect {
+	private:
+		Particle* particles;
+		int numParticles;
+	public:
+		// Constructors & Deconstructors
 
-	// Particle* particles[NUM_OF_PARTICLES];
+		/// <summary>
+		/// Constructor for ParticleEffect that initializes the array 
+		/// of pointers to Particle objects.
+		/// </summary>
+		/// <param name="numParticles">Number of particles in effect</param>
+		ParticleEffect(const int);
 
-public:
-	// Constructors & Deconstructors
+		/// <summary>
+		/// Deconstructor by deleting all objects in the particle array.
+		/// </summary>
+		~ParticleEffect();
 
-	/// <summary>
-	/// Constructor for ParticleEffect that initializes the array of pointers
-	/// to Particle objects.
-	/// </summary>
-	ParticleEffect();
+		// Game Loop Functions
 
-	/// <summary>
-	/// Deconstructor by deleting all objects in the particle array.
-	/// </summary>
-	~ParticleEffect();
+		/// <summary>
+		/// Call update on all particles that are not null.
+		/// If the particle returns isAlive as false, delete the particle.
+		/// </summary>
+		void update();
 
-	// Game Loop Functions
+		/// <summary>
+		/// Call render on all particles that are not null.
+		/// </summary>
+		/// <param name=""></param>
+		void render(RenderWindow&);
 
-	/// <summary>
-	/// Call update on all particles that are not null.
-	/// If the particle returns isAlive as false, delete the particle.
-	/// </summary>
-	void update();
+		// Helper Functions
 
-	/// <summary>
-	/// Call render on all particles that are not null.
-	/// </summary>
-	/// <param name=""></param>
-	void render(RenderWindow&);
+		/// <summary>
+		/// Creates all of the particles for a given effect
+		/// </summary>
+		/// <param name="x">X mouse position on window</param>
+		/// <param name="y">Y mouse position on window</param>
+		void CreateParticles(const float x, const float y);
 
-	// Helper Functions
+		/// <summary>
+		/// Create a single particle based on the class calling this method
+		/// </summary>
+		/// <param name="index">Index to particles array</param>
+		/// <param name="x">X mouse position on window</param>
+		/// <param name="y">Y mouse position on window</param>
+		virtual void CreateParticle(const int index, 
+			const float x, const float y) = 0;
 
-	/// <summary>
-	/// Takes two float points from mouse click input
-	/// </summary>
-	void Emit(const float, const float);
-
-	/// <summary>
-	/// Initializes each element of the particles array with given position, 
-	/// a given string for shape, and
-	/// </summary>
-	void AddParticle(short, const std::string&, Vector2f&, const float,
-		Vector2f&);
-
-	/// <summary>
-	/// Swap particle type between shape and texture
-	/// </summary>
-	void ChangeParticle();
-};
+		/// <summary>
+		/// Takes two float points from mouse click input and
+		///	creates the particle effect
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		void Emit(const float x, const float y);
+	};
+}
 
 #endif // ParticleEffect.h

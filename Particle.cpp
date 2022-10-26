@@ -1,15 +1,13 @@
-
 #include "Particle.h"
 
-using namespace sf;
 using namespace pe;
 
 //*****************************************************************************
 // Particle 
 //*****************************************************************************
 // Constructors & Deconstructors
-Particle::Particle(const Vector2f& initialPosition, 
-	const Vector2f& initialVelocity, const float lifespan) {
+Particle::Particle(Vector2f& initialPosition, 
+	Vector2f& initialVelocity, const float lifespan) {
 
 	this->position = initialPosition;
 	this->velocity = initialVelocity;
@@ -19,19 +17,17 @@ Particle::Particle(const Vector2f& initialPosition,
 
 /* Game Loop Functions */
 void Particle::update() {
-	position = position + velocity;
-
 	// Test speed relative to framerate
-	if (this->isAlive())
-		current_lifespan -= DECAY_RATE;
+	position = position + velocity;
+	current_lifespan -= DECAY_RATE;
 }
 
 /* Accessors & Mutators */
-Vector2f Particle::getPosition() {
+Vector2f& Particle::getPosition() {
 	return position;
 }
 
-Vector2f Particle::getVelocity() {
+Vector2f& Particle::getVelocity() {
 	return velocity;
 }
 
@@ -43,11 +39,11 @@ float Particle::getLifespanRemaining() const {
 	return current_lifespan;
 }
 
-void Particle::setPosition(const Vector2f& position) {
+void Particle::setPosition(Vector2f& position) {
 	this->position = position;
 }
 
-void Particle::setVelocity(const Vector2f& velocity) {
+void Particle::setVelocity(Vector2f& velocity) {
 	this->velocity = velocity;
 }
 
@@ -57,8 +53,9 @@ void Particle::setLifeSpan(const float lifespan) {
 
 /* Helper Functions */
 bool Particle::isAlive() const {
-	if (current_lifespan <= 0)
+	if (current_lifespan <= 0) {
 		return false;
+	}
 	return true;
 }
 

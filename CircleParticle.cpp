@@ -1,21 +1,20 @@
-
 #include "CircleParticle.h"
 
-using namespace pe;
 using namespace sf;
-
+using namespace pe;
 
 //*****************************************************************************
 // CircleParticle
 //*****************************************************************************
-CircleParticle::CircleParticle(const Vector2f& iP, const Vector2f& iV,
-	const float ls, const float radius, Shape& newShape) 
-	: ShapeParticle(iP, iV, ls, newShape) {
+CircleParticle::CircleParticle(Vector2f& iP, Vector2f& iV,
+	const float ls, const float radius, CircleShape& circle) 
+	: ShapeParticle(iP, iV, ls, circle) {
 	this->radius = radius;
+	
 }
 
 void CircleParticle::render(RenderWindow& window) {
-	// window.draw(*GetShape());
+	window.draw(GetShape());
 }
 
 float CircleParticle::GetRadius() const {
