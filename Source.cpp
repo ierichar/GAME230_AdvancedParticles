@@ -14,11 +14,13 @@
 /* My Classes */
 #include "ParticleEffect.h"
 #include "Game.h"
+#include "Snow.h"
 
 /* Namespaces */
 using namespace std;
 using namespace sf;
 using namespace gm;
+using namespace pe;
 
 // Main, our applicaiton entry function
 int main()
@@ -26,7 +28,7 @@ int main()
     // Create the window for the game
     RenderWindow window(VideoMode(800, 600), "SFML works!");
     Game g;
-    ParticleEffect PE;
+    Snow PE;
 
     Event event;
 
