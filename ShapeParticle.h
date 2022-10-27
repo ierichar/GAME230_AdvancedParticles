@@ -6,17 +6,17 @@
 namespace pe {
 	using namespace sf;
 
-	class ShapeParticle : protected Particle {
+	class ShapeParticle : public Particle {
 	private:
 		Shape* shape;
 
 	public:
-		ShapeParticle(Vector2f&, Vector2f&, const float, CircleShape&);
+		ShapeParticle(Vector2f&, Vector2f&, const float);
 		~ShapeParticle();	// needs to delete contents of shape if dynamically 
 							// allocated
 		void update() {};
 		virtual void render(RenderWindow&) = 0;
-		inline Shape& GetShape() { return *shape; }
+		inline Shape* GetShape() { return shape; }
 	};
 }
 

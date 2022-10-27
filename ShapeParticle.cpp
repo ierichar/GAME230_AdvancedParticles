@@ -7,9 +7,8 @@ using namespace pe;
 //*****************************************************************************
 // ShapeParticle
 //*****************************************************************************
-ShapeParticle::ShapeParticle(Vector2f& iP, Vector2f& iV, const float ls, 
-	CircleShape& circle) : Particle(iP, iV, ls) {
-	shape = &circle;
+ShapeParticle::ShapeParticle(Vector2f& iP, Vector2f& iV, const float ls) : Particle(iP, iV, ls) {
+	//this->shape = shape;
 }
 
 ShapeParticle::~ShapeParticle() {

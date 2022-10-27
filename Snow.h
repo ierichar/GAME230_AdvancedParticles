@@ -10,9 +10,9 @@ namespace pe {
 		//Snow() : ParticleEffect(NUM_OF_PARTICLES) {};
 		Snow(const int numOfParticles) : ParticleEffect(numOfParticles) {};
 
-		void CreateParticle(const int, const float, const float, CircleShape&);	//test function to see if its an issue with it not getting overriden
+		void CreateParticle(const int, const float, const float, Particle**);	//test function to see if its an issue with it not getting overriden
 
-		void CreateParticle(const int, CircleShape&);
+		//void CreateParticle(const int, CircleShape&);
 	};
 }
 
