@@ -28,7 +28,7 @@ int main()
     // Create the window for the game
     RenderWindow window(VideoMode(800, 600), "SFML works!");
     Game g;
-    Snow PE;
+    Snow PE(20);
 
     Event event;
 
