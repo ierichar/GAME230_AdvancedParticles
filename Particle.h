@@ -12,6 +12,7 @@
 #include "Random.h"
 
 #define DECAY_RATE 0.001f
+using namespace sf;
 
 namespace pe {
 	using namespace sf;

@@ -11,6 +11,8 @@
 #define GAME_H
 
 #include "ParticleEffect.h"
+#include "Snow.h"
+using namespace pe;
 
 namespace gm {
 	class Game {
@@ -23,13 +25,13 @@ namespace gm {
 		///		LMB - generate particle effect,
 		///		close - close window
 		/// </summary>
-		void handleInput(RenderWindow& window, Event e, ParticleEffect& PE);
+		void handleInput(RenderWindow& window, Event e, Snow& PE);
 
 		/// <summary>
 		/// Updates every tick
 		/// </summary>
 		/// <param name="PE"></param>
-		void update(ParticleEffect& PE);
+		void update(Snow& PE);
 
 		/// <summary>
 		/// Clears the current window, renders the contents of the
@@ -37,7 +39,7 @@ namespace gm {
 		/// </summary>
 		/// <param name="window"></param>
 		/// <param name="PE"></param>
-		void render(RenderWindow& window, ParticleEffect& PE);
+		void render(RenderWindow& window, Snow& PE);
 	};
 }
 

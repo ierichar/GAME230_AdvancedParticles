@@ -85,7 +85,7 @@ namespace pe {
 		/// <param name="x">X mouse position on window</param>
 		/// <param name="y">Y mouse position on window</param>
 		virtual void CreateParticle(const int index, 
-			const float x, const float y) = 0;
+			const float x, const float y, CircleShape& shape) = 0;
 
 		/// <summary>
 		/// Takes two float points from mouse click input and
