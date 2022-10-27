@@ -4,9 +4,11 @@ using namespace sf;
 using namespace pe;
 
 //we need this function to override the pure virtual otherwise it derives it from an abstract class which is not okay
-void Snow::CreateParticle(const int index, const float x, const float y) {
+void Snow::CreateParticle(const int index, const float x, const float y, CircleShape& shape) {
 	Vector2f temp;
-	//shape.setPosition(x);
+	temp.x = x;
+	temp.y = y;
+	shape.setPosition(temp);
 }
 
 
