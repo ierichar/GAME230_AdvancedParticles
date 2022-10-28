@@ -1,7 +1,8 @@
 #ifndef SHAPE_PARTICLE_H
 #define SHAPE_PARTICLE_H
-
+//#include <stdlib.h>
 #include "Particle.h"
+using namespace std;
 
 namespace pe {
 	using namespace sf;

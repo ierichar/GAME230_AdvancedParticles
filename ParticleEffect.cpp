@@ -31,8 +31,10 @@ void ParticleEffect::update() {
 		return;	// This is where error handling goes
 
 	for (short i = 0; i < numParticles; ++i) {
-		if (particles[i]->isAlive())
+		if (particles[i]->isAlive()) {
 			particles[i]->update();
+		}
+			
 	}
 }
 

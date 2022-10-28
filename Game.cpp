@@ -20,7 +20,7 @@ void Game::handleInput(RenderWindow& window, Event e, Snow& PE) {
         window.close();
     if (e.type == Event::MouseButtonPressed) {
         if (e.mouseButton.button == Mouse::Left) {
-            //PE.Emit(e.mouseButton.x, e.mouseButton.y);
+            PE.Emit(e.mouseButton.x, e.mouseButton.y);
         }
         if (e.mouseButton.button == Mouse::Right) {
             //PE.ChangeParticle();
