@@ -4,12 +4,15 @@
 #include "ParticleEffect.h"
 
 namespace pe {
-	class Snow : protected ParticleEffect {
+	class Snow : public ParticleEffect {
 	private:
 	public:
-		Snow() : ParticleEffect(NUM_OF_PARTICLES) {};
+		//Snow() : ParticleEffect(NUM_OF_PARTICLES) {};
+		Snow(const int numOfParticles) : ParticleEffect(numOfParticles) {};
 
-		virtual void CreateParticle(const int, CircleShape&) override;
+		void CreateParticle(const int, const float, const float, Particle**);	//test function to see if its an issue with it not getting overriden
+
+		//void CreateParticle(const int, CircleShape&);
 	};
 }
 

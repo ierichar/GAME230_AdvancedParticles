@@ -11,7 +11,9 @@ namespace pe {
 		float radius;
 
 	public:
-		CircleParticle(Vector2f&, Vector2f&, const float, const float, CircleShape&);
+						//const int, const float, const float, Particle**
+						//Vector2f&, Vector2f&, const float, const float
+		CircleParticle(Vector2f&, Vector2f&, const float, const float);
 		~CircleParticle() {};
 		void update() {};
 		virtual void render(RenderWindow&);

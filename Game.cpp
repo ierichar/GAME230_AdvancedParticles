@@ -15,7 +15,7 @@ using namespace sf;
 /// This function exclusively takes the window, an Event, and a 
 /// ParticleEffect object
 /// </summary>
-void Game::handleInput(RenderWindow& window, Event e, ParticleEffect& PE) {
+void Game::handleInput(RenderWindow& window, Event e, Snow& PE) {
     if (e.type == Event::Closed)
         window.close();
     if (e.type == Event::MouseButtonPressed) {
@@ -23,16 +23,16 @@ void Game::handleInput(RenderWindow& window, Event e, ParticleEffect& PE) {
             PE.Emit(e.mouseButton.x, e.mouseButton.y);
         }
         if (e.mouseButton.button == Mouse::Right) {
-            PE.ChangeParticle();
+            //PE.ChangeParticle();
         }
     }
 }
 
-void Game::update(ParticleEffect& PE) {
+void Game::update(Snow& PE) {
     PE.update();
 }
 
-void Game::render(RenderWindow& window, ParticleEffect& PE) {
+void Game::render(RenderWindow& window, Snow& PE) {
     window.clear();
     PE.render(window);
     window.display();

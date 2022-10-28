@@ -31,8 +31,10 @@ void ParticleEffect::update() {
 		return;	// This is where error handling goes
 
 	for (short i = 0; i < numParticles; ++i) {
-		if (particles[i].isAlive())
-			particles[i].update();
+		if (particles[i]->isAlive()) {
+			particles[i]->update();
+		}
+			
 	}
 }
 
@@ -41,14 +43,17 @@ void ParticleEffect::render(RenderWindow& window) {
 		return; // This is where error handling goes
 
 	for (short i = 0; i < numParticles; ++i) {
-		if (particles[i].isAlive())
-			particles[i].render(window);
+		if (particles[i]->isAlive())
+			particles[i]->render(window);
 	}
 }
 
 void ParticleEffect::CreateParticles(const float x, const float y) {
+
+	particles = new Particle* [numParticles];
+
 	for (int i = 0; i < numParticles; ++i) {
-		CreateParticle(i, x, y);
+		CreateParticle(i, x, y, particles);
 	}
 }
 

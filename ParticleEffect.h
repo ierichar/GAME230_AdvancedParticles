@@ -24,7 +24,9 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
+#include "CircleParticle.h"
 #include "Particle.h"
+
 
 #define NUM_OF_PARTICLES 20
 #define SHAPE_SPEED_RATE .25f
@@ -38,7 +40,7 @@ namespace pe {
 
 	class ParticleEffect {
 	private:
-		Particle* particles;
+		Particle** particles;
 		int numParticles;
 	public:
 		// Constructors & Deconstructors
@@ -85,7 +87,7 @@ namespace pe {
 		/// <param name="x">X mouse position on window</param>
 		/// <param name="y">Y mouse position on window</param>
 		virtual void CreateParticle(const int index, 
-			const float x, const float y) = 0;
+			const float x, const float y, Particle** shape) = 0;
 
 		/// <summary>
 		/// Takes two float points from mouse click input and
