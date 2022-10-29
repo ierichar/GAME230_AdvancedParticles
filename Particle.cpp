@@ -18,7 +18,7 @@ Particle::Particle(Vector2f& initialPosition,
 /* Game Loop Functions */
 void Particle::update() {
 	// Test speed relative to framerate
-	position = position + velocity;
+	position += velocity;
 	current_lifespan -= DECAY_RATE;
 }
 

@@ -31,7 +31,8 @@ int main()
     Snow PE(20);
 
     Event event;
-
+    //window.setVerticalSyncEnabled(true);
+    window.setFramerateLimit(120);
     // This is our game loop!
     // All input, logic, and rendering should be handled here
     while (window.isOpen())

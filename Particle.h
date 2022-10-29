@@ -33,7 +33,7 @@ namespace pe {
 		/// <summary>
 		/// Update values of a particle (i.e. position, lifespan)
 		/// </summary>
-		void update();
+		virtual void update();
 
 		/// <summary>
 		/// Check to make sure particle is not null.

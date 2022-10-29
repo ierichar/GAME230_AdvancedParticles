@@ -32,9 +32,6 @@
 #define SHAPE_SPEED_RATE .25f
 #define SPRITE_SPEED_RATE 1.75f
 
-#define LO -0.5f
-#define HI 0.5f
-
 namespace pe {
 	using namespace sf;
 
