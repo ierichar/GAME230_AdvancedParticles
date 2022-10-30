@@ -16,6 +16,7 @@
 #include "Game.h"
 #include "Snow.h"
 #include "Explosion.h"
+#include "Fire.h"
 
 /* Namespaces */
 using namespace std;
@@ -31,6 +32,7 @@ int main()
     Game g;
     Snow PE(20);
     Explosion explosionEffect(20);
+    Fire fireEffect(50);
     int wEffect = 1;
 
     Event event;
@@ -42,12 +44,12 @@ int main()
     {
         // Our game object handles the game loop programming pattern
         while (window.pollEvent(event)) {
-            g.handleInput(window, event, &wEffect, PE, explosionEffect);
+            g.handleInput(window, event, &wEffect, PE, explosionEffect, fireEffect);
         }
 
-        g.update(PE, explosionEffect);
+        g.update(PE, explosionEffect, fireEffect);
 
-        g.render(window, PE, explosionEffect);
+        g.render(window, PE, explosionEffect, fireEffect);
     }
 
     // The game has exited normally so send a normal exit status integer back

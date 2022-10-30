@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="CircleParticle.h" />
     <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleEffect.h" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="CircleParticle.cpp" />
     <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleEffect.cpp" />

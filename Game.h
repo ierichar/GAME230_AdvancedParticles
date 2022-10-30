@@ -13,6 +13,7 @@
 #include "ParticleEffect.h"
 #include "Snow.h"
 #include "Explosion.h"
+#include "Fire.h"
 using namespace pe;
 
 namespace gm {
@@ -26,13 +27,13 @@ namespace gm {
 		///		LMB - generate particle effect,
 		///		close - close window
 		/// </summary>
-		void handleInput(RenderWindow& window, Event e, int* whichEffect, Snow& PE, Explosion& explosionEffect);
+		void handleInput(RenderWindow& window, Event e, int* whichEffect, Snow& PE, Explosion& explosionEffect, Fire& fireEffect);
 
 		/// <summary>
 		/// Updates every tick
 		/// </summary>
 		/// <param name="PE"></param>
-		void update(Snow& PE, Explosion& explosionEffect);
+		void update(Snow& PE, Explosion& explosionEffect, Fire& fireEffect);
 
 		/// <summary>
 		/// Clears the current window, renders the contents of the
@@ -40,7 +41,7 @@ namespace gm {
 		/// </summary>
 		/// <param name="window"></param>
 		/// <param name="PE"></param>
-		void render(RenderWindow& window, Snow& PE, Explosion& explosionEffect);
+		void render(RenderWindow& window, Snow& PE, Explosion& explosionEffect, Fire& fireEffect);
 	};
 }
 

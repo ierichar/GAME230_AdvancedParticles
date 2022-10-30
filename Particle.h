@@ -23,6 +23,7 @@ namespace pe {
 		Vector2f velocity;
 		float lifespan;
 		float current_lifespan;
+		float velocityMultiplier;
 
 	public:
 		/* Constructors& Deconstructors */
@@ -60,6 +61,8 @@ namespace pe {
 		void setVelocity(Vector2f&);
 
 		void setLifeSpan(const float);
+
+		void setVelocityM(const float);
 
 		/* Helper Functions */
 
