@@ -18,7 +18,7 @@ void ShapeParticle::update() {
 	shape->setPosition(getPosition());
 	if (color.a > opacity) {
 		Uint8 newAlpha = color.a - opacity;
-		std::cout << (int)newAlpha << std::endl;
+		//std::cout << (int)newAlpha << std::endl;
 		color = Color{ color.r, color.g, color.b, newAlpha };
 		shape->setFillColor(color);
 	}

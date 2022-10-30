@@ -15,6 +15,7 @@
 #include "ParticleEffect.h"
 #include "Game.h"
 #include "Snow.h"
+#include "Explosion.h"
 
 /* Namespaces */
 using namespace std;
@@ -29,6 +30,8 @@ int main()
     RenderWindow window(VideoMode(800, 600), "SFML works!");
     Game g;
     Snow PE(20);
+    Explosion explosionEffect(20);
+    int wEffect = 1;
 
     Event event;
     //window.setVerticalSyncEnabled(true);
@@ -39,12 +42,12 @@ int main()
     {
         // Our game object handles the game loop programming pattern
         while (window.pollEvent(event)) {
-            g.handleInput(window, event, PE);
+            g.handleInput(window, event, &wEffect, PE, explosionEffect);
         }
 
-        g.update(PE);
+        g.update(PE, explosionEffect);
 
-        g.render(window, PE);
+        g.render(window, PE, explosionEffect);
     }
 
     // The game has exited normally so send a normal exit status integer back
