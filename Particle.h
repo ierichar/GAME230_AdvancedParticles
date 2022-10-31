@@ -23,6 +23,7 @@ namespace pe {
 		Vector2f velocity;
 		float lifespan;
 		float current_lifespan;
+		float velocityMultiplier;
 
 	public:
 		/* Constructors& Deconstructors */
@@ -33,7 +34,7 @@ namespace pe {
 		/// <summary>
 		/// Update values of a particle (i.e. position, lifespan)
 		/// </summary>
-		void update();
+		virtual void update();
 
 		/// <summary>
 		/// Check to make sure particle is not null.
@@ -60,6 +61,8 @@ namespace pe {
 		void setVelocity(Vector2f&);
 
 		void setLifeSpan(const float);
+
+		void setVelocityM(const float);
 
 		/* Helper Functions */
 

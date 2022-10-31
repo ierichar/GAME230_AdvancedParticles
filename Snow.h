@@ -3,6 +3,9 @@
 
 #include "ParticleEffect.h"
 
+#define LO 0.1f
+#define HI 0.5f
+
 namespace pe {
 	class Snow : public ParticleEffect {
 	private:
