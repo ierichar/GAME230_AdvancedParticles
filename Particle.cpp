@@ -18,7 +18,18 @@ Particle::Particle(Vector2f& initialPosition,
 /* Game Loop Functions */
 void Particle::update() {
 	// Test speed relative to framerate
-	position = position + velocity;
+	position += velocity;
+	
+	if (velocity.x <= 10) {
+		velocity *= velocityMultiplier;
+	}
+	
+	/*
+	Vector2f tempVec;
+	tempVec.x = velocity.x + velocityMultiplier;
+	tempVec.y = velocity.y + velocityMultiplier;
+	velocity = velocity +  tempVec;
+	*/
 	current_lifespan -= DECAY_RATE;
 }
 
@@ -45,6 +56,9 @@ void Particle::setPosition(Vector2f& position) {
 
 void Particle::setVelocity(Vector2f& velocity) {
 	this->velocity = velocity;
+}
+void Particle::setVelocityM(const float newVelocityM) {
+	this->velocityMultiplier = newVelocityM;
 }
 
 void Particle::setLifeSpan(const float lifespan) {
